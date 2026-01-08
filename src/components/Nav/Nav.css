@@ -1,0 +1,29 @@
+nav{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-items{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 2rem;
+}
+
+.logo{
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+}
+
+.item:hover{
+    border-bottom: 0.25rem solid red;
+}
+
+.link{
+    color: white;
+    text-decoration: none;
+}

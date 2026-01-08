@@ -1,0 +1,35 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem;
+}
+
+.grid-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-auto-flow: column;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+
+}
+
+.grid-list > li{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.link:hover{
+    border-bottom: 0.75px solid white;
+}
