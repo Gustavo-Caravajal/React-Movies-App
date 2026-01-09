@@ -17,7 +17,6 @@ footer{
     padding: 0;
     margin: 0;
     text-align: center;
-
 }
 
 .grid-list > li{
@@ -26,10 +25,11 @@ footer{
     text-align: center;
 }
 
-.link{
+.footer-link{
     text-decoration: none;
+    color: white;
 }
 
-.link:hover{
+.footer-link:hover{
     border-bottom: 0.75px solid white;
 }
