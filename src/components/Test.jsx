@@ -1,21 +1,17 @@
-import { useEffect, useState } from 'react';
-import { getSerieGenres, getSeries, getTopRatedMovies, getTopRatedSeries, getTrendingMovies, getTrendingSeries } from '../services/Media';
-
+import { useMediaContext } from "../context/MediaContext/useMediaContext"
 export const Test = () => {
-    const [movies, setMovies] = useState([]);
-    useEffect(() => {
-        getSerieGenres()
-            .then(data => {
-                console.log(data); // todo el objeto
-                console.log(data.genres); // solo el array de películas
-                setMovies(data.genres);
-            })
-            .catch(err => console.error(err));
-    }, [movies]);
-    return <ul>{
-        movies.map(movie => (
-            <li key={movie.id}>{movie.name}</li>
+
+    const { mediaList } = useMediaContext();
+    
+    return <>{
+        mediaList.map(movie => (
+            <div key={movie.id}>
+            <p>{movie.title}</p>
+            <p>{movie.overview}</p>
+            <img src={`http://image.tmdb.org/t/p/original${movie.urlImage}`} alt="imagen pelicula" />
+            <img src={`http://image.tmdb.org/t/p/original${movie.urlBackdropImage}`} alt="imagen de fondo pelicula" />
+            </div>
         ))
     }
-    </ul>
+    </>
 }

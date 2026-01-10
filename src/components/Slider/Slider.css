@@ -1,0 +1,8 @@
+.swiper-slide{
+    height: 275px;
+    width: 170px;
+}
+
+.swiper.swiper-initialized.swiper-horizontal{
+    width: 85%;
+}
