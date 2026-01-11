@@ -2,6 +2,7 @@ import './App.css'
 
 import { Footer } from './components/Footer/Footer'
 import { Header } from './components/Header/Header'
+import { HeroCarouselContainer } from './components/HeroCarouselContainer/HeroCarouselContainer'
 import { SliderContainer } from './components/SliderContainer/SliderContainer'
 import { Test } from './components/Test'
 import { MediaContextProvider } from './context/MediaContext/MediaContextProvider'
@@ -13,6 +14,7 @@ function App() {
     <>
       <div>
         <Header />
+        <HeroCarouselContainer/>
         <MediaContextProvider fetchFunction={getTrendingMovies}>
           <SliderContainer title={"Trending movies"}/>
         </MediaContextProvider>
@@ -20,7 +22,7 @@ function App() {
           <SliderContainer title={"Top rated movies"}/>
         </MediaContextProvider>
          <MediaContextProvider fetchFunction={getTrendingSeries}>
-          <SliderContainer title={"Top rated series"}/>
+          <SliderContainer title={"Trending series"}/>
         </MediaContextProvider>
          <MediaContextProvider fetchFunction={getTopRatedSeries}>
           <SliderContainer title={"Top rated series"}/>

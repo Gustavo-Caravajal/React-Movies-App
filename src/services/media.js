@@ -120,3 +120,15 @@ export const getSerieGenres = async () => {
 
     return results;
 };
+
+export const getMovieVideos = async (movieId) => {
+    const res = await fetch(`${BASE_URL}/movie/${movieId}/videos?language=en-US`, options);
+    
+    if(!res.ok){
+        throw new Error("Failed to fetch movie videos");
+    }
+
+    const results = await res.json();
+
+    return results;
+};
