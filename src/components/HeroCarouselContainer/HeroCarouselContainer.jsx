@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { getMovieVideos, getTrendingMovies } from "../../services/Media";
+import { getMovieVideos, getTrendingMovies } from "../../services/media";
+import { HeroCarousel } from "../HeroCarousel/HeroCarousel";
 
 export const HeroCarouselContainer = () => {
     const [heroMovies, setHeroMovies] = useState([]);
@@ -40,16 +41,7 @@ export const HeroCarouselContainer = () => {
 
     return (
         <div>
-            {heroMovies.map(movie => (
-                <div key={movie.id}>
-                    <h2>{movie.title}</h2>
-                    {movie.trailer ? (
-                        <p>Trailer Key: {movie.trailer.key} (Site: {movie.trailer.site})</p>
-                    ) : (
-                        <p>No official trailer</p>
-                    )}
-                </div>
-            ))}
+            <HeroCarousel movieList={heroMovies}/>
         </div>
     );
 };

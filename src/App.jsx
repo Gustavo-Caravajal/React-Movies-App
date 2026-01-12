@@ -6,7 +6,7 @@ import { HeroCarouselContainer } from './components/HeroCarouselContainer/HeroCa
 import { SliderContainer } from './components/SliderContainer/SliderContainer'
 import { Test } from './components/Test'
 import { MediaContextProvider } from './context/MediaContext/MediaContextProvider'
-import { getTopRatedMovies, getTopRatedSeries, getTrendingMovies, getTrendingSeries } from './services/Media'
+import { getTopRatedMovies, getTopRatedSeries, getTrendingMovies, getTrendingSeries } from './services/media'
 
 
 function App() {
