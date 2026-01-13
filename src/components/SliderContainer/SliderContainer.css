@@ -1,5 +1,36 @@
 .slider-container{
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     padding: 4rem 0;
+}
+
+.slider-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+}
+
+.slider-body{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+}
+
+.header-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 0px 1rem;
+    text-decoration: none;
+    height: 2rem;
+    color: white;
+}
+
+.header-button:hover{
+    opacity: 0.75;
 }

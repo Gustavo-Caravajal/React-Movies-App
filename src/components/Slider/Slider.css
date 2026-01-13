@@ -4,5 +4,11 @@
 }
 
 .swiper.swiper-initialized.swiper-horizontal{
-    width: 85%;
+    width: 100%;
+    margin: 0;
+}
+.slider-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
 }

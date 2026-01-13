@@ -1,6 +1,8 @@
+import './HeroCarouselContainer.css'
 import { useEffect, useState } from "react";
 import { getMovieVideos, getTrendingMovies } from "../../services/media";
 import { HeroCarousel } from "../HeroCarousel/HeroCarousel";
+
 
 export const HeroCarouselContainer = () => {
     const [heroMovies, setHeroMovies] = useState([]);
@@ -40,8 +42,10 @@ export const HeroCarouselContainer = () => {
     }, []);
 
     return (
-        <div>
-            <HeroCarousel movieList={heroMovies}/>
+        <div className="hero-container">
+            {heroMovies.length > 0 &&
+                <HeroCarousel movieList={heroMovies} />
+            }
         </div>
     );
 };

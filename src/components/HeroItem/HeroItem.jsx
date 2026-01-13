@@ -1,24 +1,29 @@
+import './HeroItem.css'
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react"
 import { ModalBody, Ratio } from "react-bootstrap";
+
 
 export const HeroItem = ({ title, overview, poster_path, trailerUrl }) => {
     const [showTrailer, setShowTrailer] = useState(false);
 
     return (
         <>
-            <div>
+            <div className="hero-data-container">
                 <h2>{title}</h2>
-                <p>{overview}</p>
-                <div>
-                    <button onClick={() => { setShowTrailer(true) }}>
+                <p className='overview'>{overview}</p>
+                <div className="buttons-container">
+                    <button className="button" onClick={() => { setShowTrailer(true) }}>
                         Watch trailer
                     </button>
-                    <button>Watch now</button>
+                    <button 
+                        className="button"
+                        style={{backgroundColor: "red", border: "1px solid red"}}
+                    >Watch now</button>
                 </div>
             </div>
-            <div>
-                <img src={`https://image.tmdb.org/t/p/original${poster_path}`} alt={overview} />
+            <div className="image-container">
+                <img className="poster-img" src={`https://image.tmdb.org/t/p/original${poster_path}`} alt={overview} />
             </div>
 
             {trailerUrl && (

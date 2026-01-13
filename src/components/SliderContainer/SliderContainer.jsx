@@ -6,12 +6,12 @@ export const SliderContainer = ({ title}) => {
     const { mediaList } = useMediaContext();    
     return (
         <div className="slider-container">
-            <div>
+            <div className="slider-header">
                 <h3>{title}</h3>
-                <a>View all</a>
+                <a className="header-button">View all</a>
             </div>
-            <div>
-                <Slider list={mediaList} />
+            <div className="slider-body">
+                <Slider className="slider" list={mediaList} />
             </div>
         </div>
     );
