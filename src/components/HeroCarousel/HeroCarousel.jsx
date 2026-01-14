@@ -1,23 +1,22 @@
 import './HeroCarousel.css'
-
 import Carousel from 'react-bootstrap/Carousel';
 import { HeroItem } from "../HeroItem/HeroItem";
 
-export const HeroCarousel = ({ movieList }) => {
+export const HeroCarousel = ({ mediaList }) => {
 
     return (
         <Carousel interval={4000}>
-            {movieList.length ? (movieList.map((movie) => (
-                <Carousel.Item key={movie.id}>
+            {mediaList.length ? (mediaList.map((mediaItem) => (
+                <Carousel.Item key={mediaItem.id}>
                     <div className='hero' style={{
-                        backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`
+                        backgroundImage: `url(https://image.tmdb.org/t/p/original${mediaItem.backdrop_path})`
                     }}>
-                        {/*<img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt="" />*/}
+                        
                         <div className="hero-content">
-                            <HeroItem {...movie}
+                            <HeroItem {...mediaItem}
                                 trailerUrl={
-                                    movie.trailer ?
-                                        `https://www.youtube.com/embed/${movie.trailer.key}`
+                                    mediaItem.trailer ?
+                                        `https://www.youtube.com/embed/${mediaItem.trailer.key}`
                                         : null
                                 }
                             />

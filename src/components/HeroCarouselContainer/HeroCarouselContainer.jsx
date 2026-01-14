@@ -1,50 +1,49 @@
 import './HeroCarouselContainer.css'
 import { useEffect, useState } from "react";
-import { getMovieVideos, getTrendingMovies } from "../../services/media";
+import { getMediaVideos } from "../../services/media";
 import { HeroCarousel } from "../HeroCarousel/HeroCarousel";
 
 
-export const HeroCarouselContainer = () => {
-    const [heroMovies, setHeroMovies] = useState([]);
+export const HeroCarouselContainer = ({fetchFunction, mediatype= "movie"}) => {
+    const [heroMedia, setHeroMedia] = useState([]);
 
     useEffect(() => {
-        const fetchHeroMovies = async () => {
+        const fetchHeroMedia = async () => {
             try {
-                const data = await getTrendingMovies()
-                const movies = data.results.slice(0, 5);
-                const moviesWithTrailer = movies.map(async (movie) => {
-                    const movieVideos = await getMovieVideos(movie.id);
-                    const resultsMovieVideos = movieVideos.results;
-
-                    const officialTrailer = resultsMovieVideos.find((video) => {
-                        return video.type === "Trailer" && video.official
+                const data = await fetchFunction()
+                const media = data.results.slice(0, 5);
+                const mediaWithTrailer = media.map(async (mediaItem) => {
+                    const mediaVideos = await getMediaVideos(mediaItem.id, mediatype);
+                    const mediaVideoResults = mediaVideos.results;
+                    const officialTrailer = mediaVideoResults.find((video) => {
+                        return video.type === "Trailer" && video.official;
                     });
 
                     const trailer = officialTrailer ? {
                         key: officialTrailer.key,
                         site: officialTrailer.site
                     } : null;
-                    const movieWithTrailer = {
-                        ...movie,
+                    const mediaWithTrailer = {
+                        ...mediaItem,
                         trailer
                     }
-                    return movieWithTrailer
+                    return mediaWithTrailer
                 });
-                const moviesWithTrailerResolved = await Promise.all(moviesWithTrailer);
-                setHeroMovies(moviesWithTrailerResolved);
+                const mediaWithTrailerResolved = await Promise.all(mediaWithTrailer);
+                setHeroMedia(mediaWithTrailerResolved);
             }
             catch (error) {
                 console.log(error);
             }
         }
 
-        fetchHeroMovies();
+        fetchHeroMedia();
     }, []);
 
     return (
         <div className="hero-container">
-            {heroMovies.length > 0 &&
-                <HeroCarousel movieList={heroMovies} />
+            {heroMedia.length > 0 &&
+                <HeroCarousel mediaList={heroMedia} />
             }
         </div>
     );
