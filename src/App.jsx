@@ -4,9 +4,8 @@ import { Footer } from './components/Footer/Footer'
 import { Header } from './components/Header/Header'
 import { HeroCarouselContainer } from './components/HeroCarouselContainer/HeroCarouselContainer'
 import { SliderContainer } from './components/SliderContainer/SliderContainer'
-import { Test } from './components/Test'
 import { MediaContextProvider } from './context/MediaContext/MediaContextProvider'
-import { getTopRatedMovies, getTopRatedSeries, getTrendingMovies, getTrendingSeries } from './services/media'
+import { getTrendingMedia, getTopRatedMedia } from './services/media'
 
 
 function App() {
@@ -14,17 +13,17 @@ function App() {
     <>
       <div>
         <Header />
-        <HeroCarouselContainer/>
-        <MediaContextProvider fetchFunction={getTrendingMovies}>
+        <HeroCarouselContainer fetchFunction={()=>getTrendingMedia("movie")} mediatype="movie"/>
+        <MediaContextProvider fetchFunction={()=>getTrendingMedia("movie")}>
           <SliderContainer title={"Trending movies"}/>
         </MediaContextProvider>
-        <MediaContextProvider fetchFunction={getTopRatedMovies}>
+        <MediaContextProvider fetchFunction={()=>getTopRatedMedia("movie")}>
           <SliderContainer title={"Top rated movies"}/>
         </MediaContextProvider>
-         <MediaContextProvider fetchFunction={getTrendingSeries}>
+         <MediaContextProvider fetchFunction={()=>getTrendingMedia("tv")}>
           <SliderContainer title={"Trending series"}/>
         </MediaContextProvider>
-         <MediaContextProvider fetchFunction={getTopRatedSeries}>
+         <MediaContextProvider fetchFunction={()=>getTopRatedMedia("tv")}>
           <SliderContainer title={"Top rated series"}/>
         </MediaContextProvider>
         <Footer />
