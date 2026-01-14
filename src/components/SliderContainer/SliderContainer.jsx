@@ -2,7 +2,7 @@ import { useMediaContext } from "../../context/MediaContext/useMediaContext";
 import { Slider } from "../Slider/Slider";
 import './SliderContainer.css'
 
-export const SliderContainer = ({ title}) => {
+export const SliderContainer = ({ title }) => {
     const { mediaList } = useMediaContext();    
     return (
         <div className="slider-container">
