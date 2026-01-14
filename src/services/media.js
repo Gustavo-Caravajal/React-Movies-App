@@ -10,6 +10,7 @@ const options = {
     headers: headers
 };
 
+const ALLOWED_MEDIA_TYPES = ["movie", "tv"];
 
 export const getMovies = async ({ page=1, year }) => {
     let url = `${BASE_URL}/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc`;
@@ -27,31 +28,6 @@ export const getMovies = async ({ page=1, year }) => {
     const results = await res.json();
     
     return results;
-};
-
-
-export const getTrendingMovies = async () => {
-    const res = await fetch(`${BASE_URL}/trending/movie/day?language=en-US`, options)
-
-    if (!res.ok) {
-        throw new Error("Failed to fetch trending movies");
-    }
-
-    const results = await res.json();
-
-    return results;
-};
-
-export const getTopRatedMovies = async () => {
-    const res = await fetch(`${BASE_URL}/movie/top_rated?language=en-US&page=1`, options);
-
-    if(!res.ok){
-        throw new Error("Failed to fetch top rated movies");
-    }
-
-    const results = await res.json();
-
-    return results
 };
 
 export const getSeries = async ({ page=1, year }) => {
@@ -72,11 +48,30 @@ export const getSeries = async ({ page=1, year }) => {
     return results;
 };
 
-export const getTrendingSeries = async () => {
-    const res = await fetch(`${BASE_URL}/trending/tv/day?language=en-US`, options);
+export const getTrendingMedia = async (mediaType="movie") => {
+    if(!ALLOWED_MEDIA_TYPES.includes(mediaType)){
+        throw new Error("Invalid media type. Use 'movie' or 'tv'");
+    }
+    
+    const res = await fetch(`${BASE_URL}/trending/${mediaType}/day?language=en-US`, options)
+
+    if (!res.ok) {
+        throw new Error("Failed to fetch trending media");
+    }
+
+    const results = await res.json();
+
+    return results;
+};
+
+export const getTopRatedMedia = async (mediaType="movie") => {
+    if(!ALLOWED_MEDIA_TYPES.includes(mediaType)){
+        throw new Error("Invalid media type. Use 'movie' or 'tv'");
+    }
+    const res = await fetch(`${BASE_URL}/${mediaType}/top_rated?language=en-US&page=1`, options);
 
     if(!res.ok){
-        throw new Error("Failed to fetch trending series");
+        throw new Error("Failed to fetch top rated media");
     }
 
     const results = await res.json();
@@ -84,23 +79,15 @@ export const getTrendingSeries = async () => {
     return results
 };
 
-export const getTopRatedSeries = async () => {
-    const res = await fetch(`${BASE_URL}/tv/top_rated?language=en-US&page=1`, options);
-    
-    if(!res.ok){
-        throw new Error("Failed to fetch top rated series");
+export const getMediaGenres = async (mediaType="movie") => {
+    if(!ALLOWED_MEDIA_TYPES.includes(mediaType)){
+        throw new Error("Invalid media type. Use 'movie' or 'tv'");
     }
     
-    const results = await res.json();
-
-    return results;
-};
-
-export const getMovieGenres = async () => {
-    const res = await fetch(`${BASE_URL}/genre/movie/list?language=en`, options);
+    const res = await fetch(`${BASE_URL}/genre/${mediaType}/list?language=en`, options);
 
     if(!res.ok){
-        throw new Error("Failed to fetch movie genres");
+        throw new Error("Failed to fetch media genres");
     }
 
     const results = await res.json();
@@ -108,27 +95,50 @@ export const getMovieGenres = async () => {
     return results;
 };
 
-
-export const getSerieGenres = async () => {
-    const res = await fetch(`${BASE_URL}/genre/tv/list?language=en`, options);
-
-    if(!res.ok){
-        throw new Error("Failed to fetch serie genres");
+export const getMediaVideos = async (mediaId, mediaType="movie") => {
+    if(!ALLOWED_MEDIA_TYPES.includes(mediaType)){
+        throw new Error("Invalid media type. Use 'movie' or 'tv'");
     }
-
-    const results = await res.json();
-
-    return results;
-};
-
-export const getMovieVideos = async (movieId) => {
-    const res = await fetch(`${BASE_URL}/movie/${movieId}/videos?language=en-US`, options);
+    
+    const res = await fetch(`${BASE_URL}/${mediaType}/${mediaId}/videos?language=en-US`, options);
     
     if(!res.ok){
-        throw new Error("Failed to fetch movie videos");
+        throw new Error("Failed to fetch media videos");
     }
 
     const results = await res.json();
 
     return results;
 };
+
+export const getMediaCredits = async (mediaId, mediaType="movie") => {
+    if(!ALLOWED_MEDIA_TYPES.includes(mediaType)){
+        throw new Error("Invalid media type. Use 'movie' or 'tv'");
+    }
+    
+    const res = await fetch(`${BASE_URL}/${mediaType}/${mediaId}/credits?language=en-US`, options);
+
+    if(!res.ok){
+        throw new Error("Failed to fetch media credits");
+    }
+
+    const results = await res.json();
+
+    return results;
+};
+
+export const getSimilarMedia = async (mediaId, mediaType="movie") => {
+    if(!ALLOWED_MEDIA_TYPES.includes(mediaType)){
+        throw new Error("Invalid media type. Use 'movie' or 'tv'");
+    }
+
+    const res = await fetch(`${BASE_URL}/${mediaType}/${mediaId}/similar?language=en-US&page=1`, options);
+
+    if(!res.ok){
+        throw new Error("Failed to fetch similar media");
+    }
+
+    const results = await res.json();
+
+    return results;
+}; 
