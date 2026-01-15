@@ -21,7 +21,7 @@ export const Slider = ({ list }) => {
                     <SwiperSlide key={item.id}>
                         <SliderItem
                             title={item.title}
-                            imageUrl={item.imageUrl}
+                            imageUrl={item.posterPath}
                         ></SliderItem>
                     </SwiperSlide>
                 ))}
