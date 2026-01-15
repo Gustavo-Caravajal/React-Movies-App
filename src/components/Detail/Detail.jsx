@@ -13,7 +13,7 @@ export const Detail = ({
 
 
     return (<>
-        <div className='hero' style={{
+        <div className='hero-detail' style={{
             backgroundImage: `url(${backdropImageUrl})`
         }}>
             <div className="image-container">

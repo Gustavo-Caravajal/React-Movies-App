@@ -1,15 +1,16 @@
-import { useEffect, useState } from "react";
 import { getMedia, getMediaCredits, getMediaVideos, getSimilarMedia } from "../../services/media";
-import { useParams } from "react-router-dom";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import './ItemDetailContainer.css'
+
 export const ItemDetailContainer = () => {
     const [detail, setDetail] = useState({});
     const { type, id } = useParams();
     useEffect(() => {
         const fetchMedia = async () => {
             try {
-                const data = await getMedia(id,type);
+                const data = await getMedia(id, type);
                 const media = data;
 
                 const [videos, credits, similarData] = await Promise.all([
@@ -41,7 +42,7 @@ export const ItemDetailContainer = () => {
                         posterPath: similarItem.poster_path
                     };
                     return similar;
-                });              
+                });
 
                 const trailer = officialTrailer ? {
                     name: officialTrailer.name,

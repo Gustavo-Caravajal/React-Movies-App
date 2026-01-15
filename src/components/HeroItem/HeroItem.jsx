@@ -16,13 +16,13 @@ export const HeroItem = ({ title, overview, poster_path, trailerUrl }) => {
                     <button className="button" onClick={() => { setShowTrailer(true) }}>
                         Watch trailer
                     </button>
-                    <button 
+                    <button
                         className="button"
-                        style={{backgroundColor: "red", border: "1px solid red"}}
+                        style={{ backgroundColor: "red", border: "1px solid red" }}
                     >Watch now</button>
                 </div>
             </div>
-            <div className="image-container">
+            <div className="poster-image-container">
                 <img className="poster-img" src={`https://image.tmdb.org/t/p/original${poster_path}`} alt={overview} />
             </div>
 
@@ -33,14 +33,14 @@ export const HeroItem = ({ title, overview, poster_path, trailerUrl }) => {
                     centered
                     size="lg"
                 >
-                  <ModalBody className="p-0">
-                    <Ratio aspectRatio="16x9">
-                        <iframe
-                            src={trailerUrl}                            
-                        />
-                    </Ratio>
-                  </ModalBody>
-                </Modal>                
+                    <ModalBody className="p-0">
+                        <Ratio aspectRatio="16x9">
+                            <iframe
+                                src={trailerUrl}
+                            />
+                        </Ratio>
+                    </ModalBody>
+                </Modal>
             )}
         </>
     );

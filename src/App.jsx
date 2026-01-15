@@ -21,7 +21,7 @@ function App() {
           </Routes>
         </BrowserRouter>
 
-        {/*<HeroCarouselContainer fetchFunction={()=>getTrendingMedia("movie")} mediatype="movie"/>
+        <HeroCarouselContainer fetchFunction={()=>getTrendingMedia("movie")} mediatype="movie"/>
         <MediaContextProvider fetchFunction={()=>getTrendingMedia("movie")}>
           <SliderContainer title={"Trending movies"}/>
         </MediaContextProvider>
@@ -33,7 +33,7 @@ function App() {
         </MediaContextProvider>
          <MediaContextProvider fetchFunction={()=>getTopRatedMedia("tv")}>
           <SliderContainer title={"Top rated series"}/>
-        </MediaContextProvider>*/}
+        </MediaContextProvider>
         <Footer />
 
       </div>
