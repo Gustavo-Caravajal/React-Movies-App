@@ -38,7 +38,7 @@ export const HeroCarouselContainer = ({fetchFunction, mediatype= "movie"}) => {
         }
 
         fetchHeroMedia();
-    }, []);
+    }, [fetchFunction,mediatype]);
 
     return (
         <div className="hero-container">
