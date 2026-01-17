@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { SliderItem } from "../SliderItem/SliderItem";
 import 'swiper/css'
 import './Slider.css'
-export const Slider = ({ list }) => {
+export const Slider = ({ list, mediaType }) => {
     if (!list || !list.length) {
         return <p>Loading...</p>
     }
@@ -20,6 +20,8 @@ export const Slider = ({ list }) => {
                 {list.map((item) => (
                     <SwiperSlide key={item.id}>
                         <SliderItem
+                            id={item.id}
+                            mediaType={mediaType}
                             title={item.title}
                             imageUrl={item.posterPath}
                         ></SliderItem>

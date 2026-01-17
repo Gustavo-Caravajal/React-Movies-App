@@ -2,11 +2,11 @@ import './HeroItem.css'
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react"
 import { ModalBody, Ratio } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 
 
-export const HeroItem = ({ title, overview, poster_path, trailerUrl }) => {
+export const HeroItem = ({ id, type="movie", title, overview, poster_path, trailerUrl }) => {
     const [showTrailer, setShowTrailer] = useState(false);
-
     return (
         <>
             <div className="hero-data-container">
@@ -16,10 +16,12 @@ export const HeroItem = ({ title, overview, poster_path, trailerUrl }) => {
                     <button className="button" onClick={() => { setShowTrailer(true) }}>
                         Watch trailer
                     </button>
-                    <button
-                        className="button"
-                        style={{ backgroundColor: "red", border: "1px solid red" }}
-                    >Watch now</button>
+                    <Link to={`/${type}/${id}`}>
+                        <button
+                            className="button"
+                            style={{ backgroundColor: "red", border: "1px solid red" }}
+                        >Watch now</button>
+                    </Link>
                 </div>
             </div>
             <div className="poster-image-container">

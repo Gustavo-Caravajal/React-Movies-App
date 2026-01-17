@@ -1,6 +1,6 @@
 import { Detail } from "../Detail/Detail";
 
-export const ItemDetail = ({ detail }) => {
+export const ItemDetail = ({ detail, mediaType }) => {
 
     return (
         <Detail
@@ -12,6 +12,7 @@ export const ItemDetail = ({ detail }) => {
             cast={detail.cast}
             similar={detail.similar}
             genres={detail.genres}
+            mediaType={mediaType}
         />
     )
 };

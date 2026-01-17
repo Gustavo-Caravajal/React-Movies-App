@@ -4,7 +4,7 @@ import { ItemList } from "../ItemList/ItemList";
 import { SearchInput } from "../SearchInput/SearchInput";
 import './ItemListContainer.css'
 
-export const ItemListContainer = ({ fetchFunction, typeMedia, title }) => {
+export const ItemListContainer = ({ fetchFunction, mediaType, title }) => {
     const [inputValue, setInputValue] = useState("");
     const [media, setMedia] = useState([]);
     const [query, setQuery] = useState("");
@@ -16,7 +16,7 @@ export const ItemListContainer = ({ fetchFunction, typeMedia, title }) => {
             setLoading(true);
             let data;
             if (query.trim()) {
-                data = await searchMedia(typeMedia, query, page)
+                data = await searchMedia(mediaType, query, page)
             }
             else {
                 data = await fetchFunction(page);
@@ -26,7 +26,7 @@ export const ItemListContainer = ({ fetchFunction, typeMedia, title }) => {
             setLoading(false)
         }
         fetchMedia();
-    }, [fetchFunction, page, query, typeMedia]);
+    }, [fetchFunction, page, query, mediaType]);
 
     return (<section className="media-section">
         <h2>{title}</h2>
@@ -40,7 +40,7 @@ export const ItemListContainer = ({ fetchFunction, typeMedia, title }) => {
                 />
             </div>
             <div className="items-container">
-                <ItemList list={media} />
+                <ItemList list={media} mediaType={mediaType} />
             </div>
             <div className="load-button-container">
                 <button

@@ -8,3 +8,7 @@ header{
     width: 100%;
     z-index: 4;
 }
+
+.logo:hover{
+    cursor: pointer;
+}

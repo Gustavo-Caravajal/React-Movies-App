@@ -6,7 +6,7 @@ import './ItemDetailContainer.css'
 
 export const ItemDetailContainer = () => {
     const [detail, setDetail] = useState({});
-    const { type, id } = useParams();
+    const { id, type } = useParams();
     useEffect(() => {
         const fetchMedia = async () => {
             try {
@@ -72,7 +72,7 @@ export const ItemDetailContainer = () => {
     return (
         <main className="main-detail-container">{
             Object.keys(detail).length > 0 ? (
-                <ItemDetail detail={detail} />
+                <ItemDetail detail={detail} mediaType={type} />
             ) : (
                 <p>Cargando...</p>
             )

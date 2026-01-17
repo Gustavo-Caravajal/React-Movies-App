@@ -10,6 +10,7 @@ export const MediaContextProvider = ({ children, fetchFunction }) => {
                 id: mediaItem.id,
                 title: mediaItem.name || mediaItem.title,
                 overview: mediaItem.overview,
+                mediaType: mediaItem.media_type,
                 posterPath: mediaItem.poster_path,
                 backdropImageUrl: mediaItem.backdrop_path
             }));
