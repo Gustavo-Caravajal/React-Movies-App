@@ -1,0 +1,32 @@
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.input-search{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.search-input {
+    display: flex;
+    text-align: start;
+    width: 300px;
+    border-radius: 15px;
+    border: 2px solid gray;
+    outline: none;
+    box-shadow: none;
+    padding: 0.25rem 1rem;
+}
+
+.lupa{
+    cursor: pointer;
+}

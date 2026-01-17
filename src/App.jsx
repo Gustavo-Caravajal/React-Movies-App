@@ -7,7 +7,7 @@ import { HeroCarouselContainer } from './components/HeroCarouselContainer/HeroCa
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer'
 import { SliderContainer } from './components/SliderContainer/SliderContainer'
 import { MediaContextProvider } from './context/MediaContext/MediaContextProvider'
-import { getTrendingMedia, getTopRatedMedia, getMovies } from './services/media'
+import { getTrendingMedia, getTopRatedMedia, getMovies, getSeries } from './services/media'
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer'
 
 
@@ -15,10 +15,12 @@ function App() {
   return (
     <>
       <div>
-        {/*<Header />*/}
+        <Header />
         <BrowserRouter>
           <Routes>
             <Route path="/movie" element={<ItemListContainer fetchFunction={getMovies} typeMedia={"movie"} title={"Movies"}/>} />
+            <Route path="/tv" element={<ItemListContainer fetchFunction={getSeries} typeMedia={"tv"} title={"TV Series"}/>} />
+
           </Routes>
         </BrowserRouter>
         

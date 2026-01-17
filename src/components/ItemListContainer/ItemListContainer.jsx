@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { searchMedia } from "../../services/media";
 import { ItemList } from "../ItemList/ItemList";
 import { SearchInput } from "../SearchInput/SearchInput";
+import './ItemListContainer.css'
 
 export const ItemListContainer = ({ fetchFunction, typeMedia, title }) => {
     const [inputValue, setInputValue] = useState("");
@@ -28,28 +29,28 @@ export const ItemListContainer = ({ fetchFunction, typeMedia, title }) => {
     }, [fetchFunction, page, query, typeMedia]);
 
     return (<section className="media-section">
-        <div className="title-container">
-            <h2>{title}</h2>
-        </div>
-        <div className="search-container">
-            <SearchInput
-                inputValue={inputValue}
-                setInputValue={setInputValue}
-                setQuery={setQuery}
-                resetPage={() => setPage(1)}
-            />
-        </div>
-        <div className="items-container">
-            <ItemList list={media} />
-        </div>
-        <div className="load-button-container">
-            <button
-                className="load-more"
-                disabled={loading}
-                onClick={() => { setPage((page) => page + 1) }}
-            >
-                {loading ? "Loading" : "Load more"}
-            </button>
+        <h2>{title}</h2>
+        <div className="media-search">
+            <div className="search-container">
+                <SearchInput
+                    inputValue={inputValue}
+                    setInputValue={setInputValue}
+                    setQuery={setQuery}
+                    resetPage={() => setPage(1)}
+                />
+            </div>
+            <div className="items-container">
+                <ItemList list={media} />
+            </div>
+            <div className="load-button-container">
+                <button
+                    className="load-more"
+                    disabled={loading}
+                    onClick={() => { setPage((page) => page + 1) }}
+                >
+                    {loading ? "Loading" : "Load more"}
+                </button>
+            </div>
         </div>
     </section>);
 };
