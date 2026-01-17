@@ -1,6 +1,12 @@
-.item-image{
+.item-image {
     height: 250px;
     width: 100%;
     object-fit: cover;
     border-radius: 7.5px;
+    transition: opacity 0.2s;
+}
+
+.item-image:hover {
+    cursor: pointer;
+    opacity: 0.4;
 }

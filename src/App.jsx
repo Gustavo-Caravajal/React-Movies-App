@@ -16,16 +16,15 @@ function App() {
     <>
       <div>
         <Header />
-        <BrowserRouter>
+       <BrowserRouter>
           <Routes>
             <Route path="/movie" element={<ItemListContainer fetchFunction={getMovies} typeMedia={"movie"} title={"Movies"}/>} />
             <Route path="/tv" element={<ItemListContainer fetchFunction={getSeries} typeMedia={"tv"} title={"TV Series"}/>} />
-
           </Routes>
         </BrowserRouter>
         
 
-        {/*<BrowserRouter>
+        <BrowserRouter>
           <Routes>
             <Route path="/:type/:id" element={<ItemDetailContainer />} />
           </Routes>
@@ -43,7 +42,7 @@ function App() {
         </MediaContextProvider>
          <MediaContextProvider fetchFunction={()=>getTopRatedMedia("tv")}>
           <SliderContainer title={"Top rated series"}/>
-        </MediaContextProvider>*/}
+        </MediaContextProvider>
         <Footer />
 
       </div>
