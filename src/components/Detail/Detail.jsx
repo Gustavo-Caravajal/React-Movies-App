@@ -41,7 +41,7 @@ export const Detail = ({
                         cast.map((castItem) => (
                             <article className="cast-item" key={castItem.id}>
                                 <img className="cast-item-image" src={`https://image.tmdb.org/t/p/original${castItem.profilePath}`} alt={castItem.name} />
-                                <p>{castItem.name}</p>
+                                <p className="name">{castItem.name}</p>
                             </article>
                         ))
                     ) : (

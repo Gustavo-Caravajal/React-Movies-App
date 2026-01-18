@@ -108,6 +108,10 @@
     border-radius: 5px;
 }
 
+.name{
+    font-size: smaller;
+}
+
 .media-container {
     display: flex;
     flex-direction: column;
