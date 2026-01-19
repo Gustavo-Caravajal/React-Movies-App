@@ -5,7 +5,7 @@ export const Header = () => {
     return (
         <header>
             <Link to={"/"}>
-                <img className="logo" src="../../public/logo.png" alt="logo de la aplicacion de peliculas" />
+                <img className="logo" src="/logo.png" alt="logo de la aplicacion de peliculas" />
             </Link>
             <Nav />
         </header>
