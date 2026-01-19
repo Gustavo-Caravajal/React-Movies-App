@@ -13,3 +13,8 @@ p,h1,h2,h3,h4,span{
   color: white;
   margin: 0;
 }
+
+body, html, #root {
+    height: 100%;
+    position: relative; /* importante para que absolute funcione correctamente */
+}

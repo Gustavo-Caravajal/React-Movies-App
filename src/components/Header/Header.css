@@ -10,7 +10,6 @@ header {
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-
     border-right: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
 }
@@ -21,23 +20,38 @@ header {
     border-radius: 50%;
 }
 
-
 .logo:hover {
     cursor: pointer;
 }
 
 @media (max-width: 768px) {
     header {
-        padding: 0 0 6.5rem 0;
+        display: flex;
+        width: 20vw;
+        height: 100vh;
         background: transparent;
+        position: absolute;
+        justify-content: flex-start;
+        align-items: flex-start;
+        top: 0;
+        right: 0;
+        padding: 0;
         backdrop-filter: blur(0);
         -webkit-backdrop-filter: blur(0);
         border-right: none;
         box-shadow: none;
+        z-index: 1000;
     }
 
-    .logo{
+    header.menu-open {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        z-index: 1000;
+    }
+
+    .logo {
         display: none;
     }
-   
 }
