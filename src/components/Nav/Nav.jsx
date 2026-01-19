@@ -32,7 +32,7 @@ export const Nav = ({showMenu, toggleMenu, scrollToTop}) => {
                 </div>
                 :
                 <nav className="nav-mobile">
-                    <Link onClick={scrollToTop} to={"/"}>
+                    <Link to={"/"}>
                         <img className="logo-mobile" src="/logo.png" alt="logo de la aplicacion de peliculas" />
                     </Link>
                     <button className="hamburger-button" onClick={() => toggleMenu()}>☰</button>

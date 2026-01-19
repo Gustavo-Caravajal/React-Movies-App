@@ -19,7 +19,7 @@ export const Header = () => {
 
     return (
         <header className={showMenu ? "menu-open" : ""}>
-            <Link to={"/"}>
+            <Link to="/">
                 <img className="logo" src="/logo.png" alt="logo de la aplicacion de peliculas" />
             </Link>
             <Nav showMenu={showMenu} toggleMenu={toggleMenu} scrollToTop={scrollToTop}/>
