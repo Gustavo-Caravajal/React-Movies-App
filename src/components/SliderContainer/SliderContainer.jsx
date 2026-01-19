@@ -16,7 +16,7 @@ export const SliderContainer = ({ title, mediaType }) => {
         <div className="slider-container">
             <div className="slider-header">
                 <h3>{title}</h3>
-                <Link to={`/${mediaType}`}>
+                <Link className="link-button" to={`/${mediaType}`}>
                     <a onClick={scrollToTop} className="header-button">View all</a>
                 </Link>
             </div>
