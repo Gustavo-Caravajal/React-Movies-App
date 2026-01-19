@@ -1,16 +1,51 @@
-# React + Vite
+# 🎬 Movie & TV Series App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación en **React** para explorar películas y series usando la API de [The Movie Database (TMDB)](https://www.themoviedb.org/).  
+Permite buscar, listar y navegar entre películas y series, con diseño moderno y efectos visuales.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📝 Características
 
-## React Compiler
+- Listado de películas y series populares.
+- Búsqueda por título con resultados dinámicos.
+- Paginación “Load More” para cargar más contenido.
+- Componente `ItemListContainer` reutilizable para distintos tipos de media.
+- Layout principal con Navbar y estructura de página limpia.
+- Efectos visuales: hover sobre imágenes, cursor pointer.
+- Diseño responsive y modular con Flexbox.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📁 Estructura del proyecto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```txt
+src/
+├── components/
+│   ├── Detail/                 
+│   ├── Footer/             
+│   ├── Header/    
+│   ├── HeroCarousel/         
+│   ├── HeroCarouselContainer/    
+    ├── HeroItem/    
+    ├── Item/    
+    ├── ItemDetail/  
+    ├── ItemDetailContainer/  
+    ├── ItemList/  
+    ├── ItemListContainer/  
+    ├── Nav/    
+    ├── SearchInput/  
+    ├── Slider/  
+    ├── SliderContainer/    
+    └── SliderItem/
+├── context/
+│   └── MediaContext/     
+├── layouts/
+│   └── MainLayout.jsx       
+├── pages/
+│   ├── Home.jsx              
+│   ├── Movies.jsx           
+│   └── TvSeries.jsx          
+├── services/
+│   └── media.js            
+└── App.jsx
