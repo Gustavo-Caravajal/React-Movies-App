@@ -38,12 +38,10 @@ export const Nav = () => {
                 :
                 <nav className="nav-mobile">
                     <Link to={"/"}>
-                        <img className="logo" src="../../public/logo.png" alt="logo de la aplicacion de peliculas" />
+                        <img className="logo-mobile" src="../../public/logo.png" alt="logo de la aplicacion de peliculas" />
                     </Link>
                     <button className="hamburger-button" onClick={() => toggleMenu()}>☰</button>
-                    <div className="title-container">
-                        <h4>Menu</h4>
-                    </div>
+                    <h4 className="menu-title">Menu</h4>
                     <ul className="nav-items">
                         <li className="item" onClick={() => toggleMenu()}>
                             <img className="item-logo" src="../../../public/home.png" alt="home" />

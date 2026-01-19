@@ -15,6 +15,13 @@ header {
     box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
 }
 
+.logo {
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+}
+
+
 .logo:hover {
     cursor: pointer;
 }
@@ -28,4 +35,9 @@ header {
         border-right: none;
         box-shadow: none;
     }
+
+    .logo{
+        display: none;
+    }
+   
 }
