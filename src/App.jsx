@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer'
 import { MainLayout } from './layouts/MainLayout'
 import { Home } from '../src/pages/Home'
-import { Movies } from '../src/pages/movies'
+import { Movies } from '../src/pages/Movies'
 import { TvSeries } from '../src/pages/TvSeries'
 
 
