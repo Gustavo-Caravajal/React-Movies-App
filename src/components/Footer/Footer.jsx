@@ -3,7 +3,7 @@ import "./Footer.css"
 export const Footer = () => {
     return (
         <footer>
-            <img className="logo" src="../../public/logo.png" alt="logo de la aplicacion de peliculas" />
+            <img className="logo" src="/logo.png" alt="logo de la aplicacion de peliculas" />
             <ul className="grid-list">
                 <li><a className="footer-link" href="/">Home</a></li>
                 <li><a className="footer-link" href="/">Contact Us</a></li>

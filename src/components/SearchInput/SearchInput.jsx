@@ -24,7 +24,7 @@ export const SearchInput = ({ setInputValue, setQuery, inputValue, resetPage }) 
                     placeholder='Search'
                 />
             </div>
-            <img onClick={handleSubmit} className='lupa' src="../../../public/lupa.png" alt="search" />
+            <img onClick={handleSubmit} className='lupa' src="/lupa.png" alt="search" />
         </form>
     )
 };
