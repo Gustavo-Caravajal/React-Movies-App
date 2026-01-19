@@ -27,7 +27,7 @@ header {
 @media (max-width: 768px) {
     header {
         display: flex;
-        width: 20vw;
+        width: 30vw;
         height: 100vh;
         background: transparent;
         position: absolute;
@@ -49,7 +49,7 @@ header {
         top: 0;
         height: 100vh;
         z-index: 1000;
-        width: 25vw;
+        width: 30vw;
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
     }
