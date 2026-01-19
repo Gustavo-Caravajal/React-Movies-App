@@ -15,6 +15,7 @@ p,h1,h2,h3,h4,span{
 }
 
 body, html, #root {
-    height: 100%;
-    position: relative; /* importante para que absolute funcione correctamente */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
