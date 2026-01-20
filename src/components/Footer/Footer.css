@@ -5,6 +5,7 @@ footer {
     align-items: center;
     gap: 2rem;
     padding: 2rem;
+    background-color: rgb(37, 37, 49);
 }
 
 .grid-list {

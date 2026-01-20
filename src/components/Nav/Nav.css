@@ -83,7 +83,17 @@ nav {
         background-color: transparent;
         color: white;
         border: none;
-        margin-right: 1rem;
+        margin-right: 0.9rem;
+        position: relative;
+        bottom: 0.5rem;
+    }
+
+    .hamburger-button-open {
+        display: flex;
+        background-color: transparent;
+        color: white;
+        border: none;
+        margin-right: 0.9rem;
     }
 
     nav.nav-mobile {
@@ -120,6 +130,7 @@ nav {
         height: 5%;
         gap: 0.5rem;
         justify-content: center;
+        align-items: center;
     }
 
     .link {

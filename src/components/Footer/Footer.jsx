@@ -5,17 +5,17 @@ export const Footer = () => {
         <footer>
             <img className="logo" src="/logo.png" alt="logo de la aplicacion de peliculas" />
             <ul className="grid-list">
-                <li><a className="footer-link" href="/">Home</a></li>
-                <li><a className="footer-link" href="/">Contact Us</a></li>
-                <li><a className="footer-link" href="/">Term Of Services</a></li>
-                <li><a className="footer-link" href="/">About Us</a></li>
-                <li><a className="footer-link" href="/">Live</a></li>
-                <li><a className="footer-link" href="/">FAQ</a></li>
-                <li><a className="footer-link" href="/">Premium</a></li>
-                <li><a className="footer-link" href="/">Privacy Policy</a></li>
-                <li><a className="footer-link" href="/">You Most Watch</a></li>
-                <li><a className="footer-link" href="/">Recent Release</a></li>
-                <li><a className="footer-link" href="/">Top IMDB</a></li>
+                <li><a className="footer-link" >Home</a></li>
+                <li><a className="footer-link" >Contact Us</a></li>
+                <li><a className="footer-link" >Term Of Services</a></li>
+                <li><a className="footer-link" >About Us</a></li>
+                <li><a className="footer-link" >Live</a></li>
+                <li><a className="footer-link" >FAQ</a></li>
+                <li><a className="footer-link" >Premium</a></li>
+                <li><a className="footer-link" >Privacy Policy</a></li>
+                <li><a className="footer-link" >You Most Watch</a></li>
+                <li><a className="footer-link" >Recent Release</a></li>
+                <li><a className="footer-link" >Top IMDB</a></li>
             </ul>
         </footer>
     );
