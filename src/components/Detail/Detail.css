@@ -86,7 +86,7 @@
 
 .movie-overview {
     overflow-wrap: break-word;
-    text-align: center;
+    text-align: initial;
 }
 
 .cast-container {

@@ -15,7 +15,7 @@ export const SliderContainer = ({ title, mediaType }) => {
     return (
         <div className="slider-container">
             <div className="slider-header">
-                <h3>{title}</h3>
+                <h3 className="header-title">{title}</h3>
                 <Link className="link-button" to={`/${mediaType}`}>
                     <a onClick={scrollToTop} className="header-button">View all</a>
                 </Link>

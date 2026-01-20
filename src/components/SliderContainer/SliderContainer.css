@@ -1,10 +1,10 @@
-.slider-container{
+.slider-container {
     width: 80%;
     margin: 0 auto;
     padding: 2rem 0;
 }
 
-.slider-header{
+.slider-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -12,14 +12,14 @@
     padding: 1rem 0;
 }
 
-.slider-body{
+.slider-body {
     display: flex;
     justify-content: center;
     width: 100%;
     padding: 0;
 }
 
-.header-button{
+.header-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,10 +31,17 @@
     color: white;
 }
 
-.header-button:hover{
+.header-button:hover {
     opacity: 0.75;
 }
 
-.link-button{
+.link-button {
     text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .header-title {
+        width: 60%;
+        text-align: start;
+    }
 }
