@@ -135,6 +135,7 @@ nav {
 
     .link {
         font-size: smaller;
+        border: none;
     }
 
     @keyframes fadeInMenu {
