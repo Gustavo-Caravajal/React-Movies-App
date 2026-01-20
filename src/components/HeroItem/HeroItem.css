@@ -46,7 +46,7 @@
     display: flex;
     width: 80%;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 1.5rem;
     background-color: transparent;
 }
@@ -83,5 +83,6 @@
     .buttons-container {
         display: flex;
         width: 100%;
+        justify-content: center;
     }
 }
