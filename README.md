@@ -2,7 +2,7 @@
 
 Una aplicación en **React** para explorar películas y series usando la API de [The Movie Database (TMDB)](https://www.themoviedb.org/).  
 Permite buscar, listar y navegar entre películas y series, con diseño moderno y efectos visuales.
-
+Demo: https://react-movies-app-33st.vercel.app/
 ---
 
 ## 📝 Características
