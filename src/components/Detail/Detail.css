@@ -161,8 +161,7 @@
     }
 
     .media-container {
-        height: 130vh;
-
+        height: 150vh;
     }
 
     .trailer-container {
@@ -171,8 +170,8 @@
     }
 
     .video {
-        width: 70%;
-        height: 50%;
+        width: 85%;
+        height: 60%;
     }
 
     .genre-container {
