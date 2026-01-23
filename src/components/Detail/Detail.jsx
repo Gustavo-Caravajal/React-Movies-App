@@ -12,7 +12,7 @@ export const Detail = ({
     mediaType
 }) => {
 
-    
+
 
     return (<>
         <div className='hero-detail' style={{
@@ -58,7 +58,11 @@ export const Detail = ({
                 </>)}</div>
             <div className="slider-container">
                 <div className="slider-header">
-                    <h3>Similar movies</h3>
+                    {mediaType === "movie" ? (
+                        <h3>Similar movies</h3>
+                    ) : (
+                        <h3>Similar series</h3>
+                    )}
                 </div>
                 <div className="slider-body">{
                     similar?.length > 0 && (

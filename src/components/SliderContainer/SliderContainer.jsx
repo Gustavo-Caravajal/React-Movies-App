@@ -6,12 +6,12 @@ import './SliderContainer.css'
 export const SliderContainer = ({ title, mediaType }) => {
     const { mediaList } = useMediaContext();
 
-    const scrollToTop = () => {
+    {/*const scrollToTop = () => {
         window.scrollTo({
             top: 0,
             behavior: "smooth" // opcional
         });
-    };
+    };*/}
     return (
         <div className="slider-container">
             <div className="slider-header">
