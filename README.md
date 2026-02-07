@@ -27,17 +27,17 @@ src/
 │   ├── Header/    
 │   ├── HeroCarousel/         
 │   ├── HeroCarouselContainer/    
-    ├── HeroItem/    
-    ├── Item/    
-    ├── ItemDetail/  
-    ├── ItemDetailContainer/  
-    ├── ItemList/  
-    ├── ItemListContainer/  
-    ├── Nav/    
-    ├── SearchInput/  
-    ├── Slider/  
-    ├── SliderContainer/    
-    └── SliderItem/
+│   ├── HeroItem/    
+│   ├── Item/    
+│   ├── ItemDetail/  
+│   ├── ItemDetailContainer/  
+│   ├── ItemList/  
+│   ├── ItemListContainer/  
+│   ├── Nav/    
+│   ├── SearchInput/  
+│   ├── Slider/  
+│   ├── SliderContainer/    
+│   └── SliderItem/
 ├── context/
 │   └── MediaContext/     
 ├── layouts/
